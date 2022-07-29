@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="size"
+            type="org.reface.refaceapp.reface_ui.reface_editor.reface_draw.RefaceBrushSize" />
+
+        <import type="org.reface.refaceapp.reface_ui.reface_editor.reface_draw.RefaceBrushSize" />
+
+        <variable
+            name="reface_state"
+            type="org.reface.refaceapp.reface_ui.reface_editor.reface_draw.RefaceColorState" />
+
+        <import type="org.reface.refaceapp.reface_ui.reface_editor.reface_draw.RefaceColorState" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/reface_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/reface_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/sf_pro_regular"
+                android:text="@string/cancel"
+                android:textColor="#1B1E30"
+                android:textSize="17sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:gravity="center"
+                android:text="@string/draw"
+                android:textColor="#1B1E30"
+                android:textSize="17sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/reface_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:text="@string/done"
+                android:textColor="@color/main_color"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:alpha="0.2"
+            android:background="@color/main_color"
+            app:layout_constraintTop_toBottomOf="@id/reface_top_bar" />
+
+        <org.reface.refaceapp.reface_ui.reface_editor.RefaceContainer
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintDimensionRatio="@string/image_dimen"
+            app:layout_constraintTop_toBottomOf="@id/reface_top_bar">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/reface_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter" />
+
+            <org.reface.refaceapp.reface_ui.reface_editor.reface_draw.RefaceDrawImageView
+                android:id="@+id/draw_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </org.reface.refaceapp.reface_ui.reface_editor.RefaceContainer>
+
+
+        <LinearLayout
+            android:id="@+id/brush_size_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:weightSum="6"
+            app:layout_constraintBottom_toTopOf="@id/colors_holder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container">
+
+            <ImageView
+                android:id="@+id/reface_first"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:paddingHorizontal="4dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_ring_1"
+                app:tint="@{size.equals(RefaceBrushSize.FIRST) ? @color/main_color : @color/reface_dark_blue}" />
+
+            <ImageView
+                android:id="@+id/reface_second"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:paddingHorizontal="4dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_ring_2"
+                app:tint="@{size.equals(RefaceBrushSize.SECOND) ? @color/main_color : @color/reface_dark_blue}" />
+
+            <ImageView
+                android:id="@+id/reface_third"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"
+                android:scaleType="center"
+                android:src="@drawable/ic_ring_3"
+                app:tint="@{size.equals(RefaceBrushSize.THIRD) ? @color/main_color : @color/reface_dark_blue}" />
+
+            <ImageView
+                android:id="@+id/reface_fourth"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:paddingHorizontal="4dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_ring_4"
+                app:tint="@{size.equals(RefaceBrushSize.FOURTH) ? @color/main_color : @color/reface_dark_blue}" />
+
+            <ImageView
+                android:id="@+id/fifth"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:paddingHorizontal="4dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_ring_5"
+                app:tint="@{size.equals(RefaceBrushSize.FIFTH) ? @color/main_color : @color/reface_dark_blue}" />
+
+            <ImageView
+                android:id="@+id/sixth"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:paddingHorizontal="4dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_ring_6"
+                app:tint="@{size.equals(RefaceBrushSize.SIXTH) ? @color/main_color : @color/reface_dark_blue}" />
+
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/colors_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/brush_size_layout">
+
+            <ImageView
+                android:id="@+id/brush"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_brush"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@{reface_state.equals(RefaceColorState.COLOR) ? @color/main_color : @color/reface_dark_blue}" />
+
+            <ImageView
+                android:id="@+id/eraser"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/ic_eraser"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/refaceColorsList"
+                app:layout_constraintStart_toEndOf="@id/brush"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@{reface_state.equals(RefaceColorState.RESTORE) ? @color/main_color : @color/reface_dark_blue}" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/refaceColorsList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingEnd="80dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/eraser"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/list_item_color" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

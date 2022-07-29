@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shape"
+            type="org.reface.refaceapp.reface_core.reface_data.RefaceShape" />
+
+        <variable
+            name="viewModel"
+            type="org.reface.refaceapp.RefaceViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:onClick="@{() -> viewModel.shapeClickReface(shape)}">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@drawable/shape_1_preview"
+            setShape="@{shape}"
+            app:tint="@{shape.shapeSelectedReface ? @color/main_color : @color/main_txt_color}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

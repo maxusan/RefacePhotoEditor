@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="reface_list"
+            type="List&lt;Boolean>" />
+
+        <import type="java.util.List" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/reface_ucrop_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <jp.co.cyberagent.android.gpuimage.GPUImageView
+            android:id="@+id/gpuimageview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="8dp"
+            android:visibility="@{reface_list[3] || reface_list[2] ? View.VISIBLE : View.GONE}"
+            app:gpuimage_show_loading="false"
+            app:gpuimage_surface_type="texture_view"
+            app:layout_constraintBottom_toTopOf="@id/recycler_filters"
+            app:layout_constraintTop_toBottomOf="@id/reface_top_bar" />
+
+        <LinearLayout
+            android:id="@+id/reface_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/reface_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/sf_pro_regular"
+                android:text="@string/cancel"
+                android:textColor="#1B1E30"
+                android:textSize="17sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:gravity="center"
+                android:text="@string/lighting"
+                android:textColor="#1B1E30"
+                android:textSize="17sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/reface_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:text="@string/done"
+                android:textColor="@color/main_color"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:alpha="0.2"
+            android:background="@color/main_color"
+            app:layout_constraintTop_toBottomOf="@id/reface_top_bar" />
+
+
+        <org.reface.refaceapp.reface_ui.reface_editor.reface.RefaceImageView
+            android:id="@+id/reface_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="8dp"
+            android:scaleType="matrix"
+            app:layout_constraintDimensionRatio="@string/image_dimen"
+            app:layout_constraintTop_toBottomOf="@id/reface_top_bar" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:alpha="0.2"
+            android:background="#20C9E0"
+            app:layout_constraintBottom_toTopOf="@id/recycler_filters" />
+
+
+        <LinearLayout
+            android:id="@+id/recycler_filters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/btn_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_brightness"
+                    android:backgroundTint="@{reface_list[0] ? @color/main_color : @color/main_txt_color}" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:text="@string/brightness"
+                    android:textColor="@{reface_list[0] ? @color/main_color : @color/reface_dark_blue}"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/btn_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_contrast"
+                    android:backgroundTint="@{reface_list[1] ? @color/main_color : @color/main_txt_color}"
+                    android:scaleX="-1" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:text="@string/contrast"
+                    android:textColor="@{reface_list[1] ? @color/main_color : @color/reface_dark_blue}"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/btn_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_higlights"
+                    android:backgroundTint="@{reface_list[2] ? @color/main_color : @color/main_txt_color}" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:text="@string/highlits"
+                    android:textColor="@{reface_list[2] ? @color/main_color : @color/reface_dark_blue}"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/btn_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_shadows"
+                    android:backgroundTint="@{reface_list[3] ? @color/main_color : @color/main_txt_color}" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/sf_pro_regular"
+                    android:text="@string/shadows"
+                    android:textColor="@{reface_list[3] ? @color/main_color : @color/reface_dark_blue}"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_margin="32dp"
+            android:backgroundTint="#3027BCD0"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/recycler_filters">
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="16dp"
+                android:progressDrawable="@drawable/custom_seek_bar"
+                android:thumb="@drawable/custom_thumb" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/refaceMainFragment">
+
+    <fragment
+        android:id="@+id/refaceMainFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface.RefaceMainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_editorFragment"
+            app:destination="@id/refaceEditorFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_shapesBottomSheetFragment"
+            app:destination="@id/shapesBottomSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/refaceEditorFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface_editor.RefaceEditorFragment"
+        android:label="fragment_editor"
+        tools:layout="@layout/fragment_editor">
+        <action
+            android:id="@+id/action_editorFragment_to_effectFragment"
+            app:destination="@id/effectFragment" />
+        <action
+            android:id="@+id/action_editorFragment_to_orientationFragment"
+            app:destination="@id/orientationFragment" />
+        <action
+            android:id="@+id/action_editorFragment_to_cropFragment"
+            app:destination="@id/cropFragment" />
+        <action
+            android:id="@+id/action_editorFragment_to_drawFragment"
+            app:destination="@id/drawFragment" />
+        <action
+            android:id="@+id/action_editorFragment_to_textFragment"
+            app:destination="@id/textFragment" />
+        <action
+            android:id="@+id/action_editorFragment_to_lightingFragment"
+            app:destination="@id/lightingFragment" />
+        <action
+            android:id="@+id/action_editorFragment_to_colorFragment"
+            app:destination="@id/colorFragment" />
+        <action
+            android:id="@+id/action_editorFragment_to_vignetteFragment"
+            app:destination="@id/vignetteFragment" />
+        <action
+            android:id="@+id/action_editorFragment_to_blurFragment"
+            app:destination="@id/blurFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/effectFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface_editor.reface_effects.RefaceEffectFragment"
+        android:label="EffectFragment"
+        tools:layout="@layout/fragment_effect">
+
+    </fragment>
+    <dialog
+        android:id="@+id/shapesBottomSheetFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface.RefaceShapesBottomSheetFragment"
+        android:label="ShapesBottomSheetFragment"
+        tools:layout="@layout/fragment_shapes_bottom_sheet"/>
+    <fragment
+        android:id="@+id/orientationFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface_editor.reface_orientation.RefaceOrientationFragment"
+        android:label="OrientationFragment"
+        tools:layout="@layout/fragment_orientation"/>
+    <fragment
+        android:id="@+id/cropFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface_editor.reface_crop.RefaceCropFragment"
+        android:label="CropFragment"
+        tools:layout="@layout/fragment_crop"/>
+    <fragment
+        android:id="@+id/drawFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface_editor.reface_draw.RefaceDrawFragment"
+        android:label="DrawFragment"
+        tools:layout="@layout/fragment_draw"/>
+    <fragment
+        android:id="@+id/textFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface_editor.reface_text.RefaceTextFragment"
+        android:label="TextFragment"
+        tools:layout="@layout/fragment_text">
+        <action
+            android:id="@+id/action_textFragment_to_textSettingsFragment"
+            app:destination="@id/textSettingsFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/textSettingsFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface_editor.reface_text.reface_settings.RefaceTextSettingsFragment"
+        android:label="TextSettingsFragment"
+        tools:layout="@layout/fragment_text_settings"/>
+    <fragment
+        android:id="@+id/lightingFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface_editor.reface_lighting.RefaceLightingFragment"
+        android:label="LightingFragment"
+        tools:layout="@layout/fragment_lighting"/>
+    <fragment
+        android:id="@+id/colorFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface_editor.reface_color.RefaceColorFragment"
+        android:label="ColorFragment"
+        tools:layout="@layout/fragment_color"/>
+    <fragment
+        android:id="@+id/vignetteFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface_editor.reface_vignette.RefaceVignetteFragment"
+        android:label="VignetteFragment"
+        tools:layout="@layout/fragment_vignette"/>
+    <fragment
+        android:id="@+id/blurFragment"
+        android:name="org.reface.refaceapp.reface_ui.reface_editor.reface_blur.RefaceBlurFragment"
+        android:label="BlurFragment"
+        tools:layout="@layout/fragment_blur"/>
+
+</navigation>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="reface_filter"
+            type="org.reface.refaceapp.reface_ui.reface_editor.reface_effects.RefaceFilter" />
+        <import type="android.view.View"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="8dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            setImageBitmap="@{reface_filter.bitmapReface}"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/image_filter_active"
+            android:visibility="@{reface_filter.activeReface ? View.VISIBLE : View.GONE}"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/main_color"
+            android:fontFamily="@font/sf_pro_regular"
+            android:paddingVertical="2dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="@{reface_filter.titleReface}"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+
+
+    </FrameLayout>
+</layout>

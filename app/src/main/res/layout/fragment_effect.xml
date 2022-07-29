@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/reface_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/reface_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/sf_pro_regular"
+                android:text="@string/cancel"
+                android:textColor="#1B1E30"
+                android:textSize="17sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:gravity="center"
+                android:text="@string/effect"
+                android:textColor="#1B1E30"
+                android:textSize="17sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/reface_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:text="@string/done"
+                android:textColor="@color/main_color"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:alpha="0.2"
+            android:background="@color/main_color"
+            app:layout_constraintTop_toBottomOf="@id/reface_top_bar" />
+
+        <org.reface.refaceapp.reface_ui.reface_editor.reface.RefaceImageView
+            android:id="@+id/reface_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintDimensionRatio="@string/image_dimen"
+            app:layout_constraintTop_toBottomOf="@id/reface_top_bar" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:alpha="0.2"
+            android:background="#20C9E0"
+            app:layout_constraintBottom_toTopOf="@id/recycler_filters" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_filters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

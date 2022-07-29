@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="main_color">#20C9E0</color>
+
+    <color name="reface_dark_blue">#1B1E30</color>
+
+    <color name="main_txt_color">#1B1E30</color>
+
+    <color name="black_65">#A6000000</color>
+
+    <color name="reface_color_1">#006A2D</color>
+    <color name="reface_color_2">#0022D2</color>
+    <color name="reface_color_3">#005424</color>
+    <color name="reface_color_4">#005EDD</color>
+    <color name="reface_color_5">#17ABDB</color>
+    <color name="reface_color_6">#1B1E30</color>
+    <color name="reface_color_7">#20C9E0</color>
+    <color name="reface_color_8">#219653</color>
+    <color name="reface_color_9">#27AE60</color>
+    <color name="reface_color_10">#27D0BC</color>
+    <color name="reface_color_11">#2C059B</color>
+    <color name="reface_color_12">#2F80ED</color>
+    <color name="reface_color_13">#56CCF2</color>
+    <color name="reface_color_14">#6FCF97</color>
+    <color name="reface_color_15">#9B51E0</color>
+    <color name="reface_color_16">#BB6BD9</color>
+    <color name="reface_color_17">#E095FD</color>
+    <color name="reface_color_18">#EB5757</color>
+    <color name="reface_color_19">#ED10AF</color>
+    <color name="reface_color_20">#F0C9FF</color>
+    <color name="reface_color_21">#F2994A</color>
+    <color name="reface_color_22">#F2C94C</color>
+    <color name="reface_color_23">#F37DD2</color>
+    <color name="reface_color_24">#FFC9F0</color>
+    <color name="reface_color_25">#FFDB5A</color>
+    <color name="reface_color_26">#FFEA2F</color>
+    <color name="reface_color_27">#FFFFFF</color>
+    <color name="ucrop_color_widget_active">@color/main_color</color>
+</resources>

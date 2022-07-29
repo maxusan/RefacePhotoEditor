@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="font"
+            type="org.reface.refaceapp.reface_core.reface_data.RefaceFont" />
+
+        <variable
+            name="viewModel"
+            type="org.reface.refaceapp.RefaceViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:onClick="@{() -> viewModel.fontClickReface(font)}">
+
+        <ImageView
+            android:id="@+id/reface_selected"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_selected"
+            android:visibility="@{font.selectedReface ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            setTypeFace="@{font}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{font.nameReface}"
+            android:textColor="@color/main_txt_color"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/reface_selected"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="[ploiuytfdrfgiopoiuygftdrf" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

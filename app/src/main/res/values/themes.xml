@@ -1,0 +1,21 @@
+<resources>
+    <style name="Theme.RefaceApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+
+    <style name="AppShapeStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyleShape</item>
+    </style>
+
+    <style name="AppModalStyleShape" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_background</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+</resources>

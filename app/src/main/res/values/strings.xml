@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">RefaceApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="copy_txt">Copy</string>
+    <string name="paste_txt">Paste</string>
+    <string name="swap_txt">Swap</string>
+    <string name="cancel_txt">Cancel</string>
+
+    <string name="blur">Blur</string>
+    <string name="vignette">Vignette</string>
+    <string name="color">Color</string>
+    <string name="lighting">Lighting</string>
+    <string name="crop">Crop</string>
+    <string name="orientation">Orientation</string>
+    <string name="effects">Effects</string>
+    <string name="draw">Draw</string>
+    <string name="text">Text</string>
+    <string name="done">Done</string>
+    <string name="photo_editor">Photo Editor</string>
+    <string name="cancel">Cancel</string>
+    <string name="effect">Effect</string>
+
+    <string name="cancel_text">Cancel</string>
+    <string name="shapes_text">Shapes</string>
+    <string name="left">Left</string>
+    <string name="custom">Custom</string>
+    <string name="original">Original</string>
+    <string name="_4_3">4:3</string>
+    <string name="_6_4">6:4</string>
+    <string name="_7_5">7:5</string>
+    <string name="_16_9">16:9</string>
+    <string name="_10_8">10:8</string>
+    <string name="square">Square</string>
+    <string name="add_new_text">+ Add new text</string>
+    <string name="brightness">Brightness</string>
+    <string name="contrast">Contrast</string>
+    <string name="highlits">Highlits</string>
+    <string name="shadows">Shadows</string>
+    <string name="saturation">Saturation</string>
+    <string name="warmth">Warmth</string>
+    <string name="fade">Fade</string>
+    <string name="tint">Tint</string>
+
+
+    <string name="image_dimen">375:546</string>
+</resources>
